@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <title>Sample</title>
+</head>
+<body>
+    <h1>This is {{ about_page }}</h1>
+
+    {% if is_admin %}
+        <p>You have admin access.</p>
+        {% else %}
+        <p>You do not have admin access.</p>
+    {% endif %}
+    <nav>
+    <a href="{% url 'home' %}">Home</a> |
+    <a href="{% url 'about' %}">About</a> |
+    <a href="{% url 'login' %}">Login</a>
+</nav>
+</body>

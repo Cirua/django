@@ -1,9 +1,23 @@
+from multiprocessing import context
 from django.shortcuts import render
 
 def home(request):
-    return render(request, "home.html")
+    context = {
+        "home_page": "Home page",
+        "user_name": "John Doe"
+    }
+    return render(request, "home.html", context)
+
 
 def about(request):
-    return render(request, "about.html")
+    context = {
+        "about_page": "About page",
+        "is_admin": True
+    }
+    return render(request, "about.html", context)
+
 def login(request):
-    return render(request, "login.html")
+    context = {
+        "login_page": "Login page"
+    }
+    return render(request, "login.html", context)
